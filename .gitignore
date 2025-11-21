@@ -1,0 +1,86 @@
+# -----------------------------
+# PyCharm / JetBrains
+# -----------------------------
+.idea/
+*.iml
+
+# -----------------------------
+# Python cache / compiled files
+# -----------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.pickle
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.dll
+*.dylib
+
+# -----------------------------
+# Virtual environments
+# -----------------------------
+.venv/
+venv/
+env/
+
+# -----------------------------
+# Jupyter Notebook checkpoints
+# -----------------------------
+.ipynb_checkpoints/
+
+# -----------------------------
+# OS generated files
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Logs
+# -----------------------------
+*.log
+logs/
+nohup.out
+
+# -----------------------------
+# TensorFlow / Keras
+# -----------------------------
+.checkpoints/
+*.h5
+*.keras
+
+# -----------------------------
+# YOLO / Ultralytics outputs
+# -----------------------------
+runs/
+weights/
+*.pt
+
+# YOLO dataset cache
+*.cache
+
+# -----------------------------
+# Project data (large datasets)
+# -----------------------------
+data/kaggle_raw/
+data/cnn_dataset/
+data/yolo_dataset/
+
+# If you want to keep annotations inside repo,
+# remove the line above for yolo_dataset.
+
+# -----------------------------
+# Model outputs
+# -----------------------------
+models/
+*.onnx
+
+# -----------------------------
+# Environment & config
+# -----------------------------
+.env
+*.yaml
+
+
