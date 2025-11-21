@@ -17,6 +17,7 @@ ultralytics>=8.2.0
 
 # Data utilities
 Pillow>=10.0.0
+kaggle>=1.7.4.5
 
 # Optional: development and visualization
 jupyter>=1.0.0
