@@ -1,0 +1,24 @@
+# Core scientific stack
+numpy>=1.26.0
+pandas>=2.2.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+scikit-learn>=1.4.0
+
+# Computer vision
+opencv-python>=4.9.0.80
+
+# Deep learning (CNN)
+tensorflow>=2.15.0
+keras>=2.15.0
+
+# Object detection (YOLOv8)
+ultralytics>=8.2.0
+
+# Data utilities
+Pillow>=10.0.0
+
+# Optional: development and visualization
+jupyter>=1.0.0
+notebook>=7.0.0
+tqdm>=4.66.0
