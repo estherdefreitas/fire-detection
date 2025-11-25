@@ -1,21 +1,41 @@
 #!/usr/bin/env bash
 
-DATA_DIR="../data/kaggle_raw"
-DATASET="metinmekiabullrahman/fire-detection"
+$FIRE_DATASET  = "metinmekiabullrahman/fire-detection"
+$FIRE_DIR      = "..\data\kaggle_raw\Fire-Detection"
 
-echo ">> Creating data directory: ${DATA_DIR}"
-mkdir -p "${DATA_DIR}"
+$SMOKE_DATASET = "deepcontractor/smoke-detection-dataset"
+$SMOKE_DIR     = "..\data\kaggle_raw\Smoke-Detection"
 
-echo ">> Checking Kaggle CLI..."
-if ! command -v kaggle &> /dev/null; then
-  echo "ERROR: kaggle CLI not found."
-  echo "Install with: pip install kaggle"
-  echo "And configure API token in ~/.kaggle/kaggle.json"
-  exit 1
-fi
+Write-Output ">> Checking kaggle CLI..."
+if (-not (Get-Command kaggle -ErrorAction SilentlyContinue)) {
+    Write-Error "ERROR: kaggle CLI not found. Install with 'pip install kaggle' and configure kaggle.json."
+    exit 1
+}
 
-echo ">> Downloading dataset from Kaggle: ${DATASET}"
-kaggle datasets download -d "${DATASET}" -p "${DATA_DIR}" --unzip
+# --- FIRE DATASET ---
+Write-Output "======================================="
+Write-Output ">> Downloading FIRE dataset"
+Write-Output "   Kaggle: $FIRE_DATASET"
+Write-Output "   Target: $FIRE_DIR"
+Write-Output "======================================="
 
-echo ">> Download complete."
-echo "Files are in: ${DATA_DIR}"
+New-Item -ItemType Directory -Force -Path $FIRE_DIR | Out-Null
+
+kaggle datasets download -d $FIRE_DATASET -p $FIRE_DIR --unzip
+
+# --- SMOKE DATASET ---
+Write-Output ""
+Write-Output "======================================="
+Write-Output ">> Downloading SMOKE dataset"
+Write-Output "   Kaggle: $SMOKE_DATASET"
+Write-Output "   Target: $SMOKE_DIR"
+Write-Output "======================================="
+
+New-Item -ItemType Directory -Force -Path $SMOKE_DIR | Out-Null
+
+kaggle datasets download -d $SMOKE_DATASET -p $SMOKE_DIR --unzip
+
+Write-Output ""
+Write-Output ">> Download complete."
+Write-Output "   Fire dataset saved in:  $FIRE_DIR"
+Write-Output "   Smoke dataset saved in: $SMOKE_DIR"
