@@ -61,7 +61,6 @@ nohup.out
 # -----------------------------
 # Project data (large datasets)
 # -----------------------------
-data/yolo_dataset/
 
 # If you want to keep annotations inside repo,
 # remove the line above for yolo_dataset.
