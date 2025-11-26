@@ -54,9 +54,6 @@ nohup.out
 # -----------------------------
 # YOLO / Ultralytics outputs
 # -----------------------------
-runs/
-weights/
-*.pt
 
 # YOLO dataset cache
 *.cache
@@ -64,8 +61,6 @@ weights/
 # -----------------------------
 # Project data (large datasets)
 # -----------------------------
-data/kaggle_raw/
-data/cnn_dataset/
 data/yolo_dataset/
 
 # If you want to keep annotations inside repo,
